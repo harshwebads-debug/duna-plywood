@@ -351,7 +351,7 @@ ul {
 }
 
 
-/* @media (max-width: 458px) {
+/* @media (max-width: 458px) { 
     .duna-top-header {
         display: none;
     }
@@ -3209,5 +3209,102 @@ ul {
     }
     .duna-footer::before {
         font-size: 10rem;
+    }
+}
+
+
+/* =========================================
+   TOP BAR RESPONSIVE FIXES
+   (Paste this at the bottom of your style.css)
+   ========================================= */
+
+
+/* Tablet & Smaller Laptops (Below 992px) */
+
+@media (max-width: 991px) {
+    .duna-top-inner {
+        flex-direction: column;
+        /* Stack Left and Right sections */
+        gap: 10px;
+        padding: 5px 0;
+    }
+    .duna-top-left,
+    .duna-top-right {
+        justify-content: center;
+        /* Center align everything */
+        width: 100%;
+    }
+    /* Ensure social icons don't stick to edges */
+    .social-box {
+        justify-content: center;
+    }
+}
+
+
+/* Mobile Screens (Below 576px - The 450px Range) */
+
+@media (max-width: 576px) {
+    .duna-top-header {
+        padding: 12px 0;
+        height: auto;
+        /* Let height grow naturally */
+    }
+    /* Stack Phone and Email vertically on very small screens */
+    .duna-top-left {
+        flex-direction: column;
+        gap: 8px;
+    }
+    /* Hide the vertical divider line (|) on mobile */
+    .duna-top-left .divider {
+        display: none;
+    }
+    /* Adjust Font Size for Mobile */
+    .top-link {
+        font-size: 0.9rem;
+        justify-content: center;
+    }
+    .top-link span {
+        font-size: 0.9rem;
+    }
+    /* Add spacing between contact info and social icons */
+    .duna-top-right {
+        margin-top: 5px;
+        padding-top: 5px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        /* Optional separator */
+    }
+}
+
+
+/* =========================================
+   ULTRA SMALL DEVICES (< 450px)
+   ========================================= */
+
+@media (max-width: 450px) {
+    /* Container padding kam karein taaki content ke liye jagah bache */
+    .duna-top-header .container-fluid {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    /* Font size aur chhota karein */
+    .duna-top-left .top-link {
+        font-size: 12px;
+        gap: 5px;
+    }
+    .duna-top-left .top-link i {
+        font-size: 13px;
+    }
+    /* Social Icons ko pass layein */
+    .social-box {
+        gap: 15px;
+    }
+    .social-box a {
+        margin-left: 0 !important;
+        /* Purana margin hatayein */
+        font-size: 14px;
+    }
+    /* Ensure elements center align properly */
+    .duna-top-inner {
+        padding: 2px 0;
     }
 }
